@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="7" inline="false" x="148" y="44">
+  <block type="controls_whileUntil" id="7" inline="false" x="148" y="23">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
       <block type="sensor_button" id="14">
@@ -8,7 +8,7 @@
     </value>
     <statement name="DO">
       <block type="controls_if" id="21" inline="false">
-        <mutation else="1"></mutation>
+        <mutation elseif="1" else="1"></mutation>
         <value name="IF0">
           <block type="logic_compare" id="28" inline="true">
             <field name="OP">LT</field>
@@ -47,70 +47,65 @@
             </next>
           </block>
         </statement>
-        <statement name="ELSE">
-          <block type="controls_if" id="223" inline="false">
-            <mutation else="1"></mutation>
-            <value name="IF0">
-              <block type="logic_compare" id="224" inline="true">
-                <field name="OP">LT</field>
-                <value name="A">
-                  <block type="sensor_object" id="225">
-                    <field name="OBJECT">RIGHTFRONT</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="226">
-                    <field name="NUM">75</field>
-                  </block>
-                </value>
+        <value name="IF1">
+          <block type="logic_compare" id="266" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="sensor_object" id="267">
+                <field name="OBJECT">RIGHTFRONT</field>
               </block>
             </value>
-            <statement name="DO0">
-              <block type="led_select" id="227" inline="true">
+            <value name="B">
+              <block type="math_number" id="268">
+                <field name="NUM">75</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="led_select" id="269" inline="true">
+            <field name="ACTION">ON</field>
+            <value name="LED">
+              <block type="math_number" id="270">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+            <next>
+              <block type="led_select" id="271" inline="true">
                 <field name="ACTION">ON</field>
                 <value name="LED">
-                  <block type="math_number" id="228">
-                    <field name="NUM">3</field>
+                  <block type="math_number" id="272">
+                    <field name="NUM">4</field>
                   </block>
                 </value>
                 <next>
-                  <block type="led_select" id="229" inline="true">
-                    <field name="ACTION">ON</field>
-                    <value name="LED">
-                      <block type="math_number" id="230">
-                        <field name="NUM">4</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="movement_left" id="264"></block>
-                    </next>
-                  </block>
+                  <block type="movement_left" id="273"></block>
                 </next>
               </block>
-            </statement>
-            <statement name="ELSE">
-              <block type="led_select" id="232" inline="true">
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="led_select" id="274" inline="true">
+            <field name="ACTION">ON</field>
+            <value name="LED">
+              <block type="math_number" id="275">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="led_select" id="276" inline="true">
                 <field name="ACTION">ON</field>
                 <value name="LED">
-                  <block type="math_number" id="233">
-                    <field name="NUM">0</field>
+                  <block type="math_number" id="277">
+                    <field name="NUM">5</field>
                   </block>
                 </value>
                 <next>
-                  <block type="led_select" id="234" inline="true">
-                    <field name="ACTION">ON</field>
-                    <value name="LED">
-                      <block type="math_number" id="235">
-                        <field name="NUM">5</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="movement_forward" id="236"></block>
-                    </next>
-                  </block>
+                  <block type="movement_forward" id="278"></block>
                 </next>
               </block>
-            </statement>
+            </next>
           </block>
         </statement>
         <next>
